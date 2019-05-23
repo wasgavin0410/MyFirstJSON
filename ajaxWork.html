@@ -5,77 +5,9 @@
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="taichungAJAX.js"></script>
     <link rel="stylesheet" type="text/css" href="ajaxCSS.css">
     <title> 台中景點 </title>
-
-    <script>
-      function showDaJa() {
-
-            $.ajax({
-              url:'http://www1.pu.edu.tw/~s1051638/class%206/大甲區.json',
-              type: 'GET',
-              dataType: "json",
-              contentType:"String",
-              success:function(data){
-                  $("#showZone").html("");
-                  //將showzone裡面的清空
-
-                  for(var i=0;i<data.length;i++){
-                      $("#showZone").append("<p>景點ID：   " + data[i]["景點ID"] + "</p>");
-                      $("#showZone").append("<p>狀態：   " + data[i]["狀態"] + "</p>" );
-                      $("#showZone").append("<p>名稱：   " + data[i]["名稱"] + "</p>" );
-                      $("#showZone").append("<p>簡述：   " + data[i]["簡述"] + "</p>" );
-                      $("#showZone").append("<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>" );
-                      $("#showZone").append("<p>所在地址：   " + data[i]["地址"] + "</p>" );
-                      $("#showZone").append("<p>東經座標：   " + data[i]["東經"] + "</p>" );
-                      $("#showZone").append("<p>北緯座標：   " + data[i]["北緯"] + "</p>" );
-                      $("#showZone").append("<p>連絡電話：   " + data[i]["電話"] + "</p>" );
-                      $("#showZone").append("<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>" );
-                      $("#showZone").append("<p>門票資訊：   " + data[i]["門票資訊"] + "</p>" );
-                      $("#showZone").append("<p>行車資訊：   " + data[i]["行車資訊"] + "</p>" );
-                      $("#showZone").append("<p>停車資訊：   " + data[i]["停車資訊"] + "</p>" );
-                      $("#showZone").append("<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p><br><br>" );
-                  }
-              }
-
-            });
-
-    }
-
-    function showDaAn() {
-
-          $.ajax({
-            url:'http://www1.pu.edu.tw/~s1051638/class%206/大安區.json',
-            type: 'GET',
-            dataType: "json",
-            contentType:"String",
-            success:function(data){
-                $("#showZone").html("");
-
-                for(var i=0;i<data.length;i++){
-                    $("#showZone").append("<p>景點ID：   " + data[i]["景點ID"] + "</p>");
-                    $("#showZone").append("<p>狀態：   " + data[i]["狀態"] + "</p>" );
-                    $("#showZone").append("<p>名稱：   " + data[i]["名稱"] + "</p>" );
-                    $("#showZone").append("<p>簡述：   " + data[i]["簡述"] + "</p>" );
-                    $("#showZone").append("<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>" );
-                    $("#showZone").append("<p>所在地址：   " + data[i]["地址"] + "</p>" );
-                    $("#showZone").append("<p>東經座標：   " + data[i]["東經"] + "</p>" );
-                    $("#showZone").append("<p>北緯座標：   " + data[i]["北緯"] + "</p>" );
-                    $("#showZone").append("<p>連絡電話：   " + data[i]["電話"] + "</p>" );
-                    $("#showZone").append("<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>" );
-                    $("#showZone").append("<p>門票資訊：   " + data[i]["門票資訊"] + "</p>" );
-                    $("#showZone").append("<p>行車資訊：   " + data[i]["行車資訊"] + "</p>" );
-                    $("#showZone").append("<p>停車資訊：   " + data[i]["停車資訊"] + "</p>" );
-                    $("#showZone").append("<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p><br><br>" );
-                }
-            }
-
-          });
-
-  }
-
-
-    </script>
 
   </head>
 
@@ -83,13 +15,40 @@
     <ul>
       <li><a href="#home"> HOME </a></li>
       <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"> Taichung </a>
+        <a href="javascript:void(0)" class="dropbtn"> 台中的都市叢林 </a>
         <div id="Dlist" class="dropdown-content">
-          <a id="DaJa" onclick="showDaJa(this)"> 大甲區 </a>
+          <a id="East" onclick="showEast()"> 東區 </a>
+          <a id="West" onclick="showWest()"> 西區 </a>
+          <a id="South" onclick="showSouth()"> 南區 </a>
+          <a id="North" onclick="showNorth()"> 北區 </a>
+          <a id="NorthTun" onclick="showNorthTun()"> 北屯區 </a>
+          <a id="SouthTun" onclick="showSouthTun()"> 南屯區 </a>
+        </div>
+      </li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> 市區外的好風景 </a>
+        <div id="DDDlist" class="dropdown-content">
+          <a id="DaJa" onclick="showDaJa()"> 大甲區 </a>
           <a id="DaAn" onclick="showDaAn()"> 大安區 </a>
-          <a id="DaDu"> 大肚區 </a>
-          <a id="DaLi"> 大里區 </a>
-          <a id="DaYa"> 大雅區 </a>
+          <a id="DaDu" onclick="showDaDu()"> 大肚區 </a>
+          <a id="DaRi" onclick="showDaRi()"> 大里區 </a>
+          <a id="DaYa" onclick="showDaYa()"> 大雅區 </a>
+          <a id="Taiping" onclick="showTaiPing()"> 太平區 </a>
+          <a id="Holy" onclick="showHoly()"> 后里區 </a>
+          <a id="Peace" onclick="showPeace()"> 和平區 </a>
+          <a id="WaiPu" onclick="showWaiPu()"> 外埔區 </a>
+          <a id="ShinSa" onclick="showShinSa()"> 新社區 </a>
+          <a id="DonSi" onclick="showDonSi()"> 東勢區 </a>
+          <a id="WuChi" onclick="showWuChi()"> 梧棲區 </a>
+          <a id="ShaRu" onclick="showShaRu()"> 沙鹿區 </a>
+          <a id="ChinSui" onclick="showChinSui()"> 清水區 </a>
+          <a id="TanJi" onclick="showTanJi()"> 潭子區 </a>
+          <a id="WuRRRRyyyyyyyy" onclick="showWuRRRRyyyyyyyy()"> 烏日區 </a>
+          <a id="SiGun" onclick="showSiGun()"> 石岡區 </a>
+          <a id="ShenGun" onclick="showShenGun()"> 神岡區 </a>
+          <a id="FunYuan" onclick="showFunYuan()"> 豐原區 </a>
+          <a id="WuFun" onclick="showWuFun()"> 霧峰區 </a>
+          <a id="RonJin" onclick="showRonJin()"> 龍井區 </a>
         </div>
       </li>
     </ul>
