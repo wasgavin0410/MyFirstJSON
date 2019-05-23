@@ -1,0 +1,106 @@
+  <!DOCTYPE html>
+
+  <html>
+
+  <head>
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="ajaxCSS.css">
+    <title> 台中景點 </title>
+
+    <script>
+      function showDaJa() {
+
+            $.ajax({
+              url:'http://www1.pu.edu.tw/~s1051638/class%206/大甲區.json',
+              type: 'GET',
+              dataType: "json",
+              contentType:"String",
+              success:function(data){
+                  $("#showZone").html("");
+                  //將showzone裡面的清空
+
+                  for(var i=0;i<data.length;i++){
+                      $("#showZone").append("<p>景點ID：   " + data[i]["景點ID"] + "</p>");
+                      $("#showZone").append("<p>狀態：   " + data[i]["狀態"] + "</p>" );
+                      $("#showZone").append("<p>名稱：   " + data[i]["名稱"] + "</p>" );
+                      $("#showZone").append("<p>簡述：   " + data[i]["簡述"] + "</p>" );
+                      $("#showZone").append("<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>" );
+                      $("#showZone").append("<p>所在地址：   " + data[i]["地址"] + "</p>" );
+                      $("#showZone").append("<p>東經座標：   " + data[i]["東經"] + "</p>" );
+                      $("#showZone").append("<p>北緯座標：   " + data[i]["北緯"] + "</p>" );
+                      $("#showZone").append("<p>連絡電話：   " + data[i]["電話"] + "</p>" );
+                      $("#showZone").append("<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>" );
+                      $("#showZone").append("<p>門票資訊：   " + data[i]["門票資訊"] + "</p>" );
+                      $("#showZone").append("<p>行車資訊：   " + data[i]["行車資訊"] + "</p>" );
+                      $("#showZone").append("<p>停車資訊：   " + data[i]["停車資訊"] + "</p>" );
+                      $("#showZone").append("<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p><br><br>" );
+                  }
+              }
+
+            });
+
+    }
+
+    function showDaAn() {
+
+          $.ajax({
+            url:'http://www1.pu.edu.tw/~s1051638/class%206/大安區.json',
+            type: 'GET',
+            dataType: "json",
+            contentType:"String",
+            success:function(data){
+                $("#showZone").html("");
+
+                for(var i=0;i<data.length;i++){
+                    $("#showZone").append("<p>景點ID：   " + data[i]["景點ID"] + "</p>");
+                    $("#showZone").append("<p>狀態：   " + data[i]["狀態"] + "</p>" );
+                    $("#showZone").append("<p>名稱：   " + data[i]["名稱"] + "</p>" );
+                    $("#showZone").append("<p>簡述：   " + data[i]["簡述"] + "</p>" );
+                    $("#showZone").append("<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>" );
+                    $("#showZone").append("<p>所在地址：   " + data[i]["地址"] + "</p>" );
+                    $("#showZone").append("<p>東經座標：   " + data[i]["東經"] + "</p>" );
+                    $("#showZone").append("<p>北緯座標：   " + data[i]["北緯"] + "</p>" );
+                    $("#showZone").append("<p>連絡電話：   " + data[i]["電話"] + "</p>" );
+                    $("#showZone").append("<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>" );
+                    $("#showZone").append("<p>門票資訊：   " + data[i]["門票資訊"] + "</p>" );
+                    $("#showZone").append("<p>行車資訊：   " + data[i]["行車資訊"] + "</p>" );
+                    $("#showZone").append("<p>停車資訊：   " + data[i]["停車資訊"] + "</p>" );
+                    $("#showZone").append("<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p><br><br>" );
+                }
+            }
+
+          });
+
+  }
+
+
+    </script>
+
+  </head>
+
+  <body>
+    <ul>
+      <li><a href="#home"> HOME </a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn"> Taichung </a>
+        <div id="Dlist" class="dropdown-content">
+          <a id="DaJa" onclick="showDaJa(this)"> 大甲區 </a>
+          <a id="DaAn" onclick="showDaAn()"> 大安區 </a>
+          <a id="DaDu"> 大肚區 </a>
+          <a id="DaLi"> 大里區 </a>
+          <a id="DaYa"> 大雅區 </a>
+        </div>
+      </li>
+    </ul>
+
+    <div id="showZone">  </div>
+  </body>
+
+
+  <footer>
+
+  </footer>
+
+
+  </html>
