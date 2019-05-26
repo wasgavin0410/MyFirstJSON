@@ -1,21 +1,20 @@
 function putIntoShowZone(data) {
-  //全部都放一次這個會狗幹長  幹
 
   for (var i = 0; i < data.length; i++) {
-    $("#showZone").append("<p>景點ID：   " + data[i]["景點ID"] + "</p>");
-    $("#showZone").append("<p>狀態：   " + data[i]["狀態"] + "</p>");
-    $("#showZone").append("<p>名稱：   " + data[i]["名稱"] + "</p>");
-    $("#showZone").append("<p>簡述：   " + data[i]["簡述"] + "</p>");
-    $("#showZone").append("<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>");
-    $("#showZone").append("<p>所在地址：   " + data[i]["地址"] + "</p>");
-    $("#showZone").append("<p>東經座標：   " + data[i]["東經"] + "</p>");
-    $("#showZone").append("<p>北緯座標：   " + data[i]["北緯"] + "</p>");
-    $("#showZone").append("<p>連絡電話：   " + data[i]["電話"] + "</p>");
-    $("#showZone").append("<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>");
-    $("#showZone").append("<p>門票資訊：   " + data[i]["門票資訊"] + "</p>");
-    $("#showZone").append("<p>行車資訊：   " + data[i]["行車資訊"] + "</p>");
-    $("#showZone").append("<p>停車資訊：   " + data[i]["停車資訊"] + "</p>");
-    $("#showZone").append("<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p><br><br>");
+    $("#showZone").append("<div class='well'><p>景點ID：   " + data[i]["景點ID"] + "</p>"
+    + "<p>狀態：   " + data[i]["狀態"] + "</p>"
+    + "<p>名稱：   " + data[i]["名稱"] + "</p>"
+    + "<p>簡述：   " + data[i]["簡述"] + "</p>"
+    + "<p>鄉鎮市區：   " + data[i]["鄉鎮市區"] + "</p>"
+    + "<p>所在地址：   " + data[i]["地址"] + "</p>"
+    + "<p>東經座標：   " + data[i]["東經"] + "</p>"
+    + "<p>北緯座標：   " + data[i]["北緯"] + "</p>"
+    + "<p>連絡電話：   " + data[i]["電話"] + "</p>"
+    + "<p>大眾運輸：   " + data[i]["大眾運輸"] + "</p>"
+    + "<p>門票資訊：   " + data[i]["門票資訊"] + "</p>"
+    + "<p>行車資訊：   " + data[i]["行車資訊"] + "</p>"
+    + "<p>停車資訊：   " + data[i]["停車資訊"] + "</p>"
+    + "<p>旅遊叮嚀：   " + data[i]["旅遊叮嚀"] + "</p></div>");
   }
 
 }

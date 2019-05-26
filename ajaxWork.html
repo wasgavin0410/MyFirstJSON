@@ -6,54 +6,66 @@
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
     <script src="taichungAJAX.js"></script>
-    <link rel="stylesheet" type="text/css" href="ajaxCSS.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
     <title> 台中景點 </title>
+
 
   </head>
 
   <body>
-    <ul>
-      <li><a href="#home"> HOME </a></li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"> 台中的都市叢林 </a>
-        <div id="Dlist" class="dropdown-content">
-          <a id="East" onclick="showEast()"> 東區 </a>
-          <a id="West" onclick="showWest()"> 西區 </a>
-          <a id="South" onclick="showSouth()"> 南區 </a>
-          <a id="North" onclick="showNorth()"> 北區 </a>
-          <a id="NorthTun" onclick="showNorthTun()"> 北屯區 </a>
-          <a id="SouthTun" onclick="showSouthTun()"> 南屯區 </a>
+    <nav class="navbar navbar-inverse">
+      <div class="content-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand"> 台中景點 </a>
         </div>
-      </li>
-      <li class="dropdown">
-        <a href="javascript:void(0)" class="dropbtn"> 市區外的好風景 </a>
-        <div id="DDDlist" class="dropdown-content">
-          <a id="DaJa" onclick="showDaJa()"> 大甲區 </a>
-          <a id="DaAn" onclick="showDaAn()"> 大安區 </a>
-          <a id="DaDu" onclick="showDaDu()"> 大肚區 </a>
-          <a id="DaRi" onclick="showDaRi()"> 大里區 </a>
-          <a id="DaYa" onclick="showDaYa()"> 大雅區 </a>
-          <a id="Taiping" onclick="showTaiPing()"> 太平區 </a>
-          <a id="Holy" onclick="showHoly()"> 后里區 </a>
-          <a id="Peace" onclick="showPeace()"> 和平區 </a>
-          <a id="WaiPu" onclick="showWaiPu()"> 外埔區 </a>
-          <a id="ShinSa" onclick="showShinSa()"> 新社區 </a>
-          <a id="DonSi" onclick="showDonSi()"> 東勢區 </a>
-          <a id="WuChi" onclick="showWuChi()"> 梧棲區 </a>
-          <a id="ShaRu" onclick="showShaRu()"> 沙鹿區 </a>
-          <a id="ChinSui" onclick="showChinSui()"> 清水區 </a>
-          <a id="TanJi" onclick="showTanJi()"> 潭子區 </a>
-          <a id="WuRRRRyyyyyyyy" onclick="showWuRRRRyyyyyyyy()"> 烏日區 </a>
-          <a id="SiGun" onclick="showSiGun()"> 石岡區 </a>
-          <a id="ShenGun" onclick="showShenGun()"> 神岡區 </a>
-          <a id="FunYuan" onclick="showFunYuan()"> 豐原區 </a>
-          <a id="WuFun" onclick="showWuFun()"> 霧峰區 </a>
-          <a id="RonJin" onclick="showRonJin()"> 龍井區 </a>
-        </div>
-      </li>
-    </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown"> 台中的都市叢林 <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a id="East" onclick="showEast()"> 東區 </a></li>
+                <li><a id="West" onclick="showWest()"> 西區 </a></li>
+                <li><a id="South" onclick="showSouth()"> 南區 </a></li>
+                <li><a id="North" onclick="showNorth()"> 北區 </a></li>
+                <li><a id="NorthTun" onclick="showNorthTun()"> 北屯區 </a></li>
+                <li><a id="SouthTun" onclick="showSouthTun()"> 南屯區 </a></li>
+              </ul>
+          </li>
+        </ul>
+        <ul class="nav navbar-nav">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown"> 市區外的好所在 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a id="DaJa" onclick="showDaJa()"> 大甲區 </a></li>
+              <li><a id="DaAn" onclick="showDaAn()"> 大安區 </a></li>
+              <li><a id="DaDu" onclick="showDaDu()"> 大肚區 </a></li>
+              <li><a id="DaRi" onclick="showDaRi()"> 大里區 </a></li>
+              <li><a id="DaYa" onclick="showDaYa()"> 大雅區 </a></li>
+              <li><a id="Taiping" onclick="showTaiPing()"> 太平區 </a></li>
+              <li><a id="Holy" onclick="showHoly()"> 后里區 </a></li>
+              <li><a id="Peace" onclick="showPeace()"> 和平區 </a></li>
+              <li><a id="WaiPu" onclick="showWaiPu()"> 外埔區 </a></li>
+              <li><a id="ShinSa" onclick="showShinSa()"> 新社區 </a></li>
+              <li><a id="DonSi" onclick="showDonSi()"> 東勢區 </a></li>
+              <li><a id="WuChi" onclick="showWuChi()"> 梧棲區 </a></li>
+              <li><a id="ShaRu" onclick="showShaRu()"> 沙鹿區 </a></li>
+              <li><a id="ChinSui" onclick="showChinSui()"> 清水區 </a></li>
+              <li><a id="TanJi" onclick="showTanJi()"> 潭子區 </a></li>
+              <li><a id="WuRRRRyyyyyyyy" onclick="showWuRRRRyyyyyyyy()"> 烏日區 </a></li>
+              <li><a id="SiGun" onclick="showSiGun()"> 石岡區 </a></li>
+              <li><a id="ShenGun" onclick="showShenGun()"> 神岡區 </a></li>
+              <li><a id="FunYuan" onclick="showFunYuan()"> 豐原區 </a></li>
+              <li><a id="WuFun" onclick="showWuFun()"> 霧峰區 </a></li>
+              <li><a id="RonJin" onclick="showRonJin()"> 龍井區 </a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div id="showZone">  </div>
+    <div id="showZone" class="container">
+      <!-- TODO: 從這裡開始寫HOME內容  -->
+    </div>
   </body>
 
 
