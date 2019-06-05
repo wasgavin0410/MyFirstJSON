@@ -5,17 +5,104 @@
   <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+    <script src="https://netdna.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <script src="taichungAJAX.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
     <title> 台中景點 </title>
 
+    <style>
+
+        .slide-container{
+          margin-top: -20px;
+          width: 1000px;
+          height: 1500px;
+          position: absolute;
+        }
+
+        .slide-container div{
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          filter: alpha(opacity=0);
+
+          -webkit-animation: round 15s linear infinite;
+          animation: round 15s linear infinite;
+        }
+
+        /*
+          @keyframes 的時間是用百分比去計算的
+          100% / 15秒 ~= 6.67%
+
+          相較於傳統用Javascript所寫出的動畫
+          只要動畫不會太複雜，CSS animation會比較省資源，讓瀏覽器負責生產動畫
+
+          PS @webkit-keyframes 為什麼都會跟 @keyframes 一起出現？
+        */
+
+        @-webkit-keyframes round{
+          6.67% {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            /*在 0~1 秒時執行淡入動畫*/
+          }
+
+          33.35%{
+            opacity: 1;
+            filter: alpha(opacity=100);
+            /*在 1~5秒時保持不動*/
+          }
+
+          40.02%{
+            opacity: 0;
+            filter: alpha(opacity=0);
+            /*在 5~6 秒淡出切換圖片*/
+          }
+        }
+
+        @keyframes round{
+          6.67% {
+            opacity: 1;
+            filter: alpha(opacity=100);
+            /*在 0~1 秒時執行淡入動畫*/
+          }
+
+          33.35%{
+            opacity: 1;
+            filter: alpha(opacity=100);
+            /*在 1~5秒時保持不動*/
+          }
+
+          40.02%{
+            opacity: 0;
+            filter: alpha(opacity=0);
+            /*在 5~6 秒淡出切換圖片*/
+          }
+        }
+
+        /*div: nth-child(a)為選取div裡面的第n位的第a位child做style*/
+
+        .slide-container div:nth-child(3){
+          -webkit-animation-delay: 0s;
+          animation-delay: 0s;
+        }
+        .slide-container div:nth-child(2){
+          -webkit-animation-delay: 5s;
+          animation-delay: 5s;
+        }
+        .slide-container div:nth-child(1){
+          -webkit-animation-delay: 10s;
+          animation-delay: 10s;
+        }
+
+    </style>
+
 
   </head>
 
   <body>
-    <nav class="navbar navbar-inverse">
+    <nav class="navbar navbar-inverse" style="height:5%;">
       <div class="content-fluid">
         <div class="navbar-header">
           <a class="navbar-brand"> 台中景點 </a>
@@ -64,15 +151,21 @@
       </div>
     </nav>
 
-    <div id="showZone" class="container">
+    <div id="showZone">
       <!-- TODO: 從這裡開始寫HOME內容  -->
+          <div class="slide-container" style="height:95%;">
+            <div>
+                <img src="photos/opera.jpg" alt="台中國家歌劇院">
+            </div>
+            <div>
+                <img src="photos/shen.jpg" alt="審計新村">
+            </div>
+            <div>
+                <img src="photos/forest.jpg" alt="一座我也不知道哪裡的森林">
+            </div>
+          </div>
     </div>
   </body>
-
-
-  <footer>
-
-  </footer>
 
 
   </html>
